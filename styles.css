@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+.background{
+    background-image: url(./src/image/backL.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.navBar{
+    border: solid black 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo{
+    height: 60px;
+    width: 60px;
+
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.searchInput{
+  width: 490px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #D9D9D9;
+}
+.subNav{
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #99BFDA;
+}
