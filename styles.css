@@ -1,47 +1,110 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-.background{
-    background-image: url(./src/image/backL.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-   
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --card-primary-color:  #cce0f1;
+  --card-secondary-color: #a5cff3;
+  --card-letter-color:white;
 }
 
-.navBar{
-    border: solid black 2px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.logo{
-    height: 60px;
-    width: 60px;
+.background {
+  background-image: url(./src/image/backL.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 15vh;
+  gap: 10px;
+  padding-top: 5px;
+  border: red solid 2px;
 }
-.searchInput{
-  width: 490px;
+
+.logo,
+.location,
+.search,
+.subNav,
+.theam {}
+
+.searchInput {
+  flex: 1;
   height: 30px;
   border-radius: 5px;
   border: none;
   background-color: #D9D9D9;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
 }
-.subNav{
-  width: 200px;
+
+.logo {
+  height: 60px;
+  width: 60px;
+}
+
+.subNav {
   height: 30px;
   border-radius: 5px;
   border: none;
   background-color: #99BFDA;
+}
+
+.subNav>span {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.theam>i {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.content {
+  height: 85vh;
+  border: red solid 2px;
+}
+
+.upper {
+  height: 35vh;
+  border: red solid 2px;
+}
+
+.todayCard {
+  height: 35vh;
+  width: 30vw;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color:var(--card-primary-color);
+}
+.todayCard >.title{
+  background-color: var(--card-secondary-color);
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  z-index: 10;
+}
+.mid{
+  height: 40%;
+  border: red solid 2px;
+  display: flex;
+  align-items: center;
+}
+.mid>.left{
+  margin-left: 10px;
+}
+
+.lower {
+  height: 50vh;
+  border: red solid 2px;
 }
