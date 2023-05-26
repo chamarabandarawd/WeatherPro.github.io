@@ -2,18 +2,19 @@
   margin: 0;
   padding: 0;
 }
+
 :root {
-  --card-primary-color:  #cce0f1;
+  --card-primary-color: #cce0f1;
   --card-secondary-color: #a5cff3;
-  --card-letter-color:white;
+  --card-letter-color: white;
 }
 
 .background {
   background-image: url(./src/image/backL.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
 }
 
@@ -25,7 +26,8 @@
   height: 15vh;
   gap: 10px;
   padding-top: 5px;
-  border: red solid 2px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .logo,
@@ -69,22 +71,36 @@
 
 .content {
   height: 85vh;
-  border: red solid 2px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .upper {
   height: 35vh;
-  border: red solid 2px;
+  display: flex;
 }
 
 .todayCard {
   height: 35vh;
-  width: 30vw;
+  width: 25vw;
   margin-left: 10px;
   border-radius: 20px;
-  background-color:var(--card-primary-color);
+  background-color: var(--card-primary-color);
+  position: relative;
 }
-.todayCard >.title{
+
+.todayCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6%;
+  z-index: -1;
+}
+
+.todayCard>.title {
   background-color: var(--card-secondary-color);
   height: 25%;
   align-items: center;
@@ -94,17 +110,125 @@
   color: white;
   z-index: 10;
 }
-.mid{
-  height: 40%;
-  border: red solid 2px;
-  display: flex;
-  align-items: center;
+
+
+
+
+#temprature {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  color: white;
+  font-size: 40px;
 }
-.mid>.left{
+
+#weatheIcon {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  width: 40%;
+  height: auto;
+}
+
+.desc {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+}
+
+.miniFont {
+  font-size: smaller;
+  margin-bottom: 0px;
+  color: white;
+}
+
+.hourlyData{
+  display: flex;
+
+}
+
+.hourlyCard {
+  height: 35vh;
+  width: 10vw;
   margin-left: 10px;
+  border-radius: 20px;
+  background-color: var(--card-primary-color);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+}
+
+.hourlyCard>.title {
+  background-color: var(--card-secondary-color);
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  z-index: 10;
+}
+#horly_temprature{
+  position: absolute;
+  left: 30%;
+  top:70%;
+  color: white;
+  font-size: 300%;
+}
+
+#horly_weatheIcon{
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 90%;
+  height: auto;
 }
 
 .lower {
   height: 50vh;
-  border: red solid 2px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.dailyData{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  margin-left: 10px;
+  margin-top: 5px;
+
+}
+
+
+.dailyCard{
+  height: 28%;
+  width: 100%;
+  background-color: var(--card-primary-color);
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#daily_temprature{
+  left: 30%;
+  top:70%;
+  color: white;
+  font-size: 250%;
+  flex: 1;
+  margin-left: 10px;
+}
+
+#daily_weatheIcon{
+  right: 5%;
+  width: 80px;
+  height: auto;
+  z-index: 100;
+  
+}
+.mapArea{
+  flex: 2;
 }
