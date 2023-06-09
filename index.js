@@ -170,4 +170,44 @@ window.onload = function () {
     chart.render();
   }
   
+  // Get current location
+  navigator.geolocation.getCurrentPosition((potition)=>{
+    console.log(potition);
+  lati=potition.coords.latitude;
+  longi=potition.coords.longitude;
+})
+
+
+
+
   }
+
+let lati=null;
+let longi=null;
+let lc=$("#location");
+
+function runEveryMinute() {
+    navigator.geolocation.getCurrentPosition((potition)=>{
+        console.log(potition);
+      lati=potition.coords.latitude;
+      longi=potition.coords.longitude;
+    })
+    console.log("Function running every minute");
+    let location=txt.val();
+    fetch(
+        `http://api.weatherapi.com/v1/current.json?key=0deab009cb7a417381c155910231405&q=${lati},${longi}`,
+        {
+            method:"GET",
+            mode:"cors"
+        }
+    ).then(
+        (res)=>{
+          return  res.json();
+        }
+    ).then((data)=>{
+        console.log(data);
+        lc.text(data.location.name);
+    })
+}
+runEveryMinute();
+setInterval(runEveryMinute, 600);
