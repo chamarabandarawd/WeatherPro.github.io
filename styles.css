@@ -195,7 +195,7 @@
 }
 
 .dailyData{
-  flex: 1;
+  flex: 3;
   display: flex;
   flex-direction: column;
   gap: 3%;
@@ -232,7 +232,7 @@
   
 }
 .mapArea{
-  flex: 2;
+  flex: 4;
 }
 
 
@@ -243,15 +243,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-
-.grphArea{
-
- width: 95%;
- height:50vh ;
- margin-left: 10px;
- margin-right: 10px;
-}
-
 .his_data{
 
   width: 95%;
@@ -260,5 +251,17 @@ align-items: center;
   margin-right: 10px;
   display: flex;
   margin-top: 10px;
+}
+
+#dataPicker{
+  border-radius: 10px;
+  margin: 5px;
+  border: #99BFDA;
+  background-color: #99BFDA;
+}
+.histTitle{
+  background-color: var(--card-primary-color);
+  width: 100%;
+  text-align: center;
 }
 

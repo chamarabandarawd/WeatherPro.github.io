@@ -1,213 +1,131 @@
+let lati = null;
+let longi = null;
+const lc = $("#location");
+const c_day = $("#c_day");
+const c_month = $("#c_month");
+const c_year = $("#c_year");
+
 window.onload = function () {
 
-  var chart = new CanvasJS.Chart("chartContainer", {
-    theme:"light2",
-    animationEnabled: true,
-    title:{
-      text: "Historical Weather Data"
-    },
-    axisY :{
-      title: "Number of Viewers",
-      suffix: "mn"
-    },
-    toolTip: {
-      shared: "true"
-    },
-    legend:{
-      cursor:"pointer",
-      itemclick : toggleDataSeries
-    },
-    data: [{
-      type: "spline",
-      visible: false,
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 1",
-      dataPoints: [
-        { label: "Ep. 1", y: 2.22 },
-        { label: "Ep. 2", y: 2.20 },
-        { label: "Ep. 3", y: 2.44 },
-        { label: "Ep. 4", y: 2.45 },
-        { label: "Ep. 5", y: 2.58 },
-        { label: "Ep. 6", y: 2.44 },
-        { label: "Ep. 7", y: 2.40 },
-        { label: "Ep. 8", y: 2.72 },
-        { label: "Ep. 9", y: 2.66 },
-        { label: "Ep. 10", y: 3.04 }
-      ]
-    },
-    {
-      type: "spline", 
-      showInLegend: true,
-      visible: false,
-      yValueFormatString: "##.00mn",
-      name: "Season 2",
-      dataPoints: [
-        { label: "Ep. 1", y: 3.86 },
-        { label: "Ep. 2", y: 3.76 },
-        { label: "Ep. 3", y: 3.77 },
-        { label: "Ep. 4", y: 3.65 },
-        { label: "Ep. 5", y: 3.90 },
-        { label: "Ep. 6", y: 3.88 },
-        { label: "Ep. 7", y: 3.69 },
-        { label: "Ep. 8", y: 3.86 },
-        { label: "Ep. 9", y: 3.38 },
-        { label: "Ep. 10", y: 4.20 }
-      ]
-    },
-    {
-      type: "spline",
-      visible: false,
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 3",
-      dataPoints: [
-        { label: "Ep. 1", y: 4.37 },
-        { label: "Ep. 2", y: 4.27 },
-        { label: "Ep. 3", y: 4.72 },
-        { label: "Ep. 4", y: 4.87 },
-        { label: "Ep. 5", y: 5.35 },
-        { label: "Ep. 6", y: 5.50 },
-        { label: "Ep. 7", y: 4.84 },
-        { label: "Ep. 8", y: 4.13 },
-        { label: "Ep. 9", y: 5.22 },
-        { label: "Ep. 10", y: 5.39 }
-      ]
-    },
-    {
-      type: "spline",
-          visible: false,
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 4",
-      dataPoints: [
-        { label: "Ep. 1", y: 6.64 },
-        { label: "Ep. 2", y: 6.31 },
-        { label: "Ep. 3", y: 6.59 },
-        { label: "Ep. 4", y: 6.95 },
-        { label: "Ep. 5", y: 7.16 },
-        { label: "Ep. 6", y: 6.40 },
-        { label: "Ep. 7", y: 7.20 },
-        { label: "Ep. 8", y: 7.17 },
-        { label: "Ep. 9", y: 6.95 },
-        { label: "Ep. 10", y: 7.09 }
-      ]
-    },
-    {
-      type: "spline", 
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 5",
-      dataPoints: [
-        { label: "Ep. 1", y: 8 },
-        { label: "Ep. 2", y: 6.81 },
-        { label: "Ep. 3", y: 6.71 },
-        { label: "Ep. 4", y: 6.82 },
-        { label: "Ep. 5", y: 6.56 },
-        { label: "Ep. 6", y: 6.24 },
-        { label: "Ep. 7", y: 5.40 },
-        { label: "Ep. 8", y: 7.01 },
-        { label: "Ep. 9", y: 7.14 },
-        { label: "Ep. 10", y: 8.11 }
-      ]
-    },
-    {
-      type: "spline", 
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 6",
-      dataPoints: [
-        { label: "Ep. 1", y: 7.94 },
-        { label: "Ep. 2", y: 7.29 },
-        { label: "Ep. 3", y: 7.28 },
-        { label: "Ep. 4", y: 7.82 },
-        { label: "Ep. 5", y: 7.89 },
-        { label: "Ep. 6", y: 6.71 },
-        { label: "Ep. 7", y: 7.80 },
-        { label: "Ep. 8", y: 7.60 },
-        { label: "Ep. 9", y: 7.66 },
-        { label: "Ep. 10", y: 8.89 }
-      ]
-    },
-    {
-      type: "spline", 
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 7",
-      dataPoints: [
-        { label: "Ep. 1", y: 10.11 },
-        { label: "Ep. 2", y: 9.27 },
-        { label: "Ep. 3", y: 9.25 },
-        { label: "Ep. 4", y: 10.17 },
-        { label: "Ep. 5", y: 10.72 },
-        { label: "Ep. 6", y: 10.24 },
-        { label: "Ep. 7", y: 12.07 }
-      ]
-    },
-            {
-      type: "spline", 
-      showInLegend: true,
-      yValueFormatString: "##.00mn",
-      name: "Season 8",
-      dataPoints: [
-        { label: "Ep. 1", y: 11.76 },
-        { label: "Ep. 2", y: 10.29 },
-        { label: "Ep. 3", y: 12.02 },
-        { label: "Ep. 4", y: 11.80 },
-        { label: "Ep. 5", y: 12.48 },
-        { label: "Ep. 6", y: 13.61 }
-      ]
-    }]
-  });
-  chart.render();
-  
-  function toggleDataSeries(e) {
-    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
-      e.dataSeries.visible = false;
-    } else {
-      e.dataSeries.visible = true;
-    }
-    chart.render();
-  }
-  
-  // Get current location
-  navigator.geolocation.getCurrentPosition((potition)=>{
-    console.log(potition);
-  lati=potition.coords.latitude;
-  longi=potition.coords.longitude;
-})
+  //Get current  location
 
+  navigator.geolocation.getCurrentPosition((potition) => {
+    lati = potition.coords.latitude;
+    longi = potition.coords.longitude;
 
-
-
-  }
-
-let lati=null;
-let longi=null;
-let lc=$("#location");
-
-function runEveryMinute() {
-    navigator.geolocation.getCurrentPosition((potition)=>{
-        console.log(potition);
-      lati=potition.coords.latitude;
-      longi=potition.coords.longitude;
-    })
-    console.log("Function running every minute");
-    let location=txt.val();
     fetch(
-        `http://api.weatherapi.com/v1/current.json?key=0deab009cb7a417381c155910231405&q=${lati},${longi}`,
-        {
-            method:"GET",
-            mode:"cors"
-        }
+      `http://api.weatherapi.com/v1/forecast.json?key=0deab009cb7a417381c155910231405&q=${lati},${longi}`,
+      {
+        method: "GET",
+        mode: "cors"
+      }
     ).then(
-        (res)=>{
-          return  res.json();
-        }
-    ).then((data)=>{
-        console.log(data);
-        lc.text(data.location.name);
+      (res) => {
+        return res.json();
+      }
+    ).then((data) => {
+      lc.text(data.location.name + ", " + data.location.country);
+      $("#c_temp").text(data.current.temp_c);
+      $("#wSpeed").text(data.current.wind_kph);
+      $("#c_RH").text(data.current.humidity);
+      $("#weatheIcon").attr("src", data.current.condition.icon);
+
+      $(".ht5").text(Math.floor(data.forecast.forecastday[0].hour[4].temp_c));
+      $(".hw5").attr("src", data.forecast.forecastday[0].hour[4].condition.icon);
+
+      $(".ht6").text(Math.floor(data.forecast.forecastday[0].hour[5].temp_c));
+      $(".hw6").attr("src", data.forecast.forecastday[0].hour[5].condition.icon);
+
+      $(".ht9").text(Math.floor(data.forecast.forecastday[0].hour[8].temp_c));
+      $(".hw9").attr("src", data.forecast.forecastday[0].hour[8].condition.icon);
+
+      $(".ht12").text(Math.floor(data.forecast.forecastday[0].hour[11].temp_c));
+      $(".hw12").attr("src", data.forecast.forecastday[0].hour[11].condition.icon);
+
+      $(".ht15").text(Math.floor(data.forecast.forecastday[0].hour[14].temp_c));
+      $(".hw15").attr("src", data.forecast.forecastday[0].hour[14].condition.icon);
+
+      $(".ht18").text(Math.floor(data.forecast.forecastday[0].hour[17].temp_c));
+      $(".hw18").attr("src", data.forecast.forecastday[0].hour[17].condition.icon);
+
+      $(".ht21").text(Math.floor(data.forecast.forecastday[0].hour[20].temp_c));
+      $(".hw21").attr("src", data.forecast.forecastday[0].hour[20].condition.icon);
+
     })
+
+
+    //Get next 3 day weather data;
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    fetch(`http://api.weatherapi.com/v1/forecast.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&days=3`)
+      .then(response => response.json())
+      .then(data => {
+        for (i = 0; i < 3; i++) {
+          $("#day" + i).text(daysOfWeek[new Date(data.forecast.forecastday[i].date).getDay()]);
+          $("#tempDay" + i).text(data.forecast.forecastday[i].day.avgtemp_c);
+          $("#humiDay" + i).text(data.forecast.forecastday[i].day.avghumidity);
+          $(".weatherIconDay" + i).attr("src", data.forecast.forecastday[i].day.condition.icon);
+        }
+      })
+      .catch(error => {
+        // Handle any errors
+      });
+
+    //Historical data
+    getDate();
+
+
+
+  })
+
+  // Get current date and time
+  var currentDate = new Date();
+  var monthNames = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  c_day.text(currentDate.getDate());
+  c_month.text(monthNames[currentDate.getMonth()]);
+  c_year.text(currentDate.getFullYear());
+
+
 }
-runEveryMinute();
-setInterval(runEveryMinute, 600);
+
+function getDate(){
+  date=$('#dataPicker')
+  dt=date.val();
+  fetch(
+    `http://api.weatherapi.com/v1/history.json ?key=0deab009cb7a417381c155910231405&q=Kegalle&dt=${dt}`
+  ).then(response => response.json())
+  .then(data => {
+    
+    $("#histTemp").text(data.forecast.forecastday[0].day.avgtemp_c);
+    $(".histWS").text(data.forecast.forecastday[0].day.maxwind_kph);
+    $("#histRH").text(data.forecast.forecastday[0].day.avghumidity);
+    $(".histWI").attr("src", data.forecast.forecastday[0].day.condition.icon);
+
+    console.log(data.forecast.forecastday[0].hour[4].temp_c)
+
+    $(".hht5").text(Math.floor(data.forecast.forecastday[0].hour[4].temp_c));
+      $(".hhw5").attr("src", data.forecast.forecastday[0].hour[4].condition.icon);
+
+      $(".hht6").text(Math.floor(data.forecast.forecastday[0].hour[5].temp_c));
+      $(".hhw6").attr("src", data.forecast.forecastday[0].hour[5].condition.icon);
+
+      $(".hht9").text(Math.floor(data.forecast.forecastday[0].hour[8].temp_c));
+      $(".hhw9").attr("src", data.forecast.forecastday[0].hour[8].condition.icon);
+
+      $(".hht12").text(Math.floor(data.forecast.forecastday[0].hour[11].temp_c));
+      $(".hhw12").attr("src", data.forecast.forecastday[0].hour[11].condition.icon);
+
+      $(".hht15").text(Math.floor(data.forecast.forecastday[0].hour[14].temp_c));
+      $(".hhw15").attr("src", data.forecast.forecastday[0].hour[14].condition.icon);
+
+      $(".ht18").text(Math.floor(data.forecast.forecastday[0].hour[17].temp_c));
+      $(".hw18").attr("src", data.forecast.forecastday[0].hour[17].condition.icon);
+
+      $(".hht21").text(Math.floor(data.forecast.forecastday[0].hour[20].temp_c));
+      $(".hhw21").attr("src", data.forecast.forecastday[0].hour[20].condition.icon);
+    
+  })
+}
