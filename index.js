@@ -158,7 +158,7 @@ function getDate(lati,longi){
 
 theamIcon=$(".theamIcon");
 background=$(".background");
-isNightMode=false;
+isNightMode=true;
 function changeTheam() {
   isNightMode = !isNightMode;
   if (isNightMode) {
