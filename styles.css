@@ -234,6 +234,13 @@
 .mapArea{
   flex: 4;
 }
+#windy {
+  width: 97%;
+  height: 90%;
+  margin: 20px;
+  margin-top: 5px;
+  border-radius: 20px;
+}
 
 
 
@@ -264,4 +271,5 @@ align-items: center;
   width: 100%;
   text-align: center;
 }
+
 

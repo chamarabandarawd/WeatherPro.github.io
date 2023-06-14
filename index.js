@@ -128,4 +128,32 @@ function getDate(){
       $(".hhw21").attr("src", data.forecast.forecastday[0].hour[20].condition.icon);
     
   })
+
+  const options = {
+    // Required: API key
+    key: 'Y0KYgezyUwpUCgFeRK3FV1nnrJILZcyB', // REPLACE WITH YOUR KEY !!!
+  
+    // Put additional console output
+    verbose: true,
+  
+    // Optional: Initial state of the map
+    lat: lati,
+    lon: longi,
+    zoom: 10,
+  };
+  windyInit(options, windyAPI => {
+    // windyAPI is ready, and contain 'map', 'store',
+    // 'picker' and other usefull stuff
+  
+    const { map } = windyAPI;
+    // .map is instance of Leaflet map
+  
+    L.popup()
+        .setLatLng([lati, longi])
+        .setContent(data.location.name + ", " + data.location.country)
+        .openOn(map);
+  });
+  
 }
+
+
