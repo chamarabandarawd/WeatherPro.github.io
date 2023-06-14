@@ -24,22 +24,23 @@
                 <span class="material-symbols-outlined">
                     person_pin_circle
                 </span>
-                <span id="location">
+                <span id="location" class="cmnText" >
                     Loading...
                 </span>
             </div>
-            <input class="searchInput" type="search" placeholder="Search" aria-label="Search">
+            <input class="searchInput" type="search" placeholder="Search" aria-label="Search" on>
             <div class="subNav">
-                <a href="#todayPage">Today</a>
-                <a href="#histPage">Historical</a>
+                <a href="#todayPage" class="cmnText">Today</a>
+                <a href="#histPage" class="cmnText">Historical</a>
+                        
             </div>
-            <i class="bi bi-bell"></i>
-            <div class="theam">
-                <i class="fa-sharp fa-light fa-sun-bright"></i>
-                <i class="fa-solid fa-moon"></i>
-            </div>
+            <img class="theamIcon" onclick="changeTheam()" src="./src/image/dark-theme-icon-512x512-185rlszm.png" alt="">
+            
+
         </div>
+        <h1 class="cmnText" style="text-align: center;">Today Weather</h1>
         <div class="today" id="todayPage">
+           
             <div class="upper">
                 <div class="todayCard">
                     <div class="title">
@@ -52,8 +53,8 @@
                     <h1 id="temprature"><span id="c_temp"></span>&deg;</h1>
                     <img id="weatheIcon" src="" alt="weather icon">
                     <div class="desc">
-                        <h6>Wind Speed <span id="wSpeed">30</span> km/h</h3>
-                            <h6>Humidity<span id="c_RH">30</span> %</h3>
+                        <h6 class="cmnText">Wind Speed <span id="wSpeed">30</span> km/h</h3>
+                            <h6 class="cmnText">Humidity<span id="c_RH">30</span> %</h3>
                     </div>
 
                 </div>
@@ -62,51 +63,58 @@
                         <div class="title">
                             <h3 id="h5">05:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht5">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw5" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht5">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw5" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
 
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>06:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht6">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw6" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht6">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw6" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>09:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht9">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw9" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht9">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw9" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>12:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht12">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw12" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht12">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw12" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>03:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht15">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw15" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht15">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw15" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>06:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht18">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw18" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht18">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw18" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>09:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="ht21">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hw21" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="ht21">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hw21" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                 </div>
             </div>
@@ -120,7 +128,8 @@
                             &deg;
                             <span id="humiDay0">- 53%</span><span>%</span>
                         </h1>
-                        <img id="daily_weatheIcon" class="weatherIconDay0" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <img id="daily_weatheIcon" class="weatherIconDay0" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="dailyCard">
                         <h1 id="daily_temprature">
@@ -128,7 +137,8 @@
                             &deg;
                             <span id="humiDay1">- 53%</span><span>%</span>
                         </h1>
-                        <img id="daily_weatheIcon" class="weatherIconDay1" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <img id="daily_weatheIcon" class="weatherIconDay1" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="dailyCard">
                         <h1 id="daily_temprature">
@@ -136,7 +146,8 @@
                             &deg;
                             <span id="humiDay2">- 53%</span><span>%</span>
                         </h1>
-                        <img id="daily_weatheIcon" class="weatherIconDay2" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <img id="daily_weatheIcon" class="weatherIconDay2" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                 </div>
                 <div class="mapArea" id="weather-map-container">
@@ -146,17 +157,17 @@
 
         </div>
         <div class="historical" id="histPage">
-            <h1 class="histTitle">Historical data</h1>
+            <h1 class="cmnText">Historical Weather</h1>
             <div class="his_data">
                 <div class="todayCard">
                     <div class="title">
-                        <h3><input onchange="getDate()" type="date" value="2023-06-13" id="dataPicker"></h1>
+                        <h3 class="cmnText"><input onchange="getDate()" type="date" value="2023-06-13" id="dataPicker"></h1>
                     </div>
                     <h1 id="temprature"><span id="histTemp"></span>&deg;</h1>
                     <img id="weatheIcon" class="histWI" src="./src/image/weather-icon-png-2.png" alt="weather icon">
                     <div class="desc">
-                        <h6>Wind Speed <span id="wSpeed" class="histWS"></span> km/h</h3>
-                            <h6>Humidity<span id="histRH">30</span> %</h3>
+                        <h6 class="cmnText">Wind Speed <span id="wSpeed" class="histWS"></span> km/h</h3>
+                            <h6 class="cmnText">Humidity<span id="histRH">30</span> %</h3>
                     </div>
 
                 </div>
@@ -165,55 +176,63 @@
                         <div class="title">
                             <h3 id="hh5">05:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht5">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw5" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht5">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw5" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
 
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>06:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht6">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw6" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht6">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw6" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>09:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht9">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw9" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht9">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw9" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>12:00 AM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht12">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw12" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht12">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw12" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>03:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht15">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw15" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht15">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw15" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>06:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht18">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw18" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht18">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw18" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                     <div class="hourlyCard">
                         <div class="title">
                             <h3>09:00 PM</h1>
                         </div>
-                        <h1 id="horly_temprature" ><span class="hht21">26</span>&deg;</h1>
-                        <img id="horly_weatheIcon" class="hhw21" src="./src/image/weather-icon-png-2.png" alt="weather icon">
+                        <h1 id="horly_temprature"><span class="hht21">26</span>&deg;</h1>
+                        <img id="horly_weatheIcon" class="hhw21" src="./src/image/weather-icon-png-2.png"
+                            alt="weather icon">
                     </div>
                 </div>
+
             </div>
-     
+
             <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
             <script src="./index.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
