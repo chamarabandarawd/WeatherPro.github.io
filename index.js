@@ -14,7 +14,7 @@ window.onload = function () {
     longi = potition.coords.longitude;
 
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=0deab009cb7a417381c155910231405&q=${lati},${longi}`,
+      `https://api.weatherapi.com/v1/forecast.json?key=0deab009cb7a417381c155910231405&q=${lati},${longi}`,
       {
         method: "GET",
         mode: "cors"
@@ -57,7 +57,7 @@ window.onload = function () {
     //Get next 3 day weather data;
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&days=3`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&days=3`)
       .then(response => response.json())
       .then(data => {
         for (i = 0; i < 3; i++) {
@@ -95,7 +95,7 @@ function getDate(lati,longi){
   date=$('#dataPicker')
   dt=date.val();
   fetch(
-    `http://api.weatherapi.com/v1/history.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&dt=${dt}`
+    `https://api.weatherapi.com/v1/history.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&dt=${dt}`
   ).then(response => response.json())
   .then(data => {
     
@@ -186,7 +186,7 @@ function setLightModeColors() {
 
 function changeLocation(location){
   fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=0deab009cb7a417381c155910231405&q=${location}`,
+    `https://api.weatherapi.com/v1/forecast.json?key=0deab009cb7a417381c155910231405&q=${location}`,
     {
       method: "GET",
       mode: "cors"
@@ -228,7 +228,7 @@ function changeLocation(location){
   });
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&days=3`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json ?key=0deab009cb7a417381c155910231405&q=${lati},${longi}&days=3`)
       .then(response => response.json())
       .then(data => {
         for (i = 0; i < 3; i++) {
@@ -246,7 +246,7 @@ function changeLocation(location){
     date=$('#dataPicker')
   dt=date.val();
   fetch(
-    `http://api.weatherapi.com/v1/history.json ?key=0deab009cb7a417381c155910231405&q=${location}&dt=${dt}`
+    `https://api.weatherapi.com/v1/history.json ?key=0deab009cb7a417381c155910231405&q=${location}&dt=${dt}`
   ).then(response => response.json())
   .then(data => {
     
